@@ -25,7 +25,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@commitlint/cli@^8.0.0":
+"@commitlint/cli@8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-8.1.0.tgz#a3d4236c0ac961d7026a53d728b179c696d6a045"
   integrity sha512-83K5C2nIAgoZlzMegf0/MEBjX+ampUyc/u79RxgX9ZYjzos+RQtNyO7I43dztVxPXSwAnX9XRgoOfkGWA4nbig==
@@ -47,7 +47,7 @@
   resolved "https://registry.yarnpkg.com/@commitlint/config-angular-type-enum/-/config-angular-type-enum-7.6.0.tgz#9c3ffff18037b375a078eb704d118c7929968a49"
   integrity sha512-oWGBo6P7gN07qNczMeviq2dxenq1LOnJcXlF4EFj3ifje3EoQMvZicM2gJaqBAZ3K7ZMHrG5l/njL61wKyyikg==
 
-"@commitlint/config-angular@^7.1.2":
+"@commitlint/config-angular@7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@commitlint/config-angular/-/config-angular-7.6.0.tgz#41d4ce9698d9ae5eb858a8a8e90bc64e1507f3a3"
   integrity sha512-Rt0LxOTMxR0a6CWF3U5Y8zCMXz7vJqGrR0fBxjRw6fjndKehED78gbphiqKxjDaTJ4NDs259urR/BPhHCkYuAg==
@@ -1283,7 +1283,7 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-airbnb-base@^12.1.0:
+eslint-config-airbnb-base@12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
   integrity sha512-/vjm0Px5ZCpmJqnjIzcFb9TKZrKWz0gnuG/7Gfkt0Db1ELJR51xkZth+t14rYdqWgX836XbuxtArbIHlVhbLBA==
@@ -1306,7 +1306,7 @@ eslint-module-utils@^2.4.0:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
 
-eslint-plugin-import@^2.8.0:
+eslint-plugin-import@2.18.2:
   version "2.18.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.18.2.tgz#02f1180b90b077b33d447a17a2326ceb400aceb6"
   integrity sha512-5ohpsHAiUBRNaBWAF08izwUGlbrJoJJ+W9/TBwsGoR1MnlgfwMIKrFeSjWbt6moabiXW9xNvtFz+97KHRfI4HQ==
@@ -1348,7 +1348,7 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@^5.16.0:
+eslint@5.16.0:
   version "5.16.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.16.0.tgz#a1e3ac1aae4a3fbd8296fcf8f7ab7314cbb6abea"
   integrity sha512-S3Rz11i7c8AA5JPv7xAH+dOyq/Cu/VXHiHXBPOU1k/JAM5dXqQPt3qcrhpHSorXmrpu2g0gkIBVXAqCpzfoZIg==
@@ -1894,7 +1894,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-husky@^2.4.0:
+husky@2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/husky/-/husky-2.7.0.tgz#c0a9a6a3b51146224e11bba0b46bba546e461d05"
   integrity sha512-LIi8zzT6PyFpcYKdvWRCn/8X+6SuG2TgYYMrM6ckEYhlp44UcEduVymZGIZNLiwOUjrEud+78w/AsAiqJA/kRg==
@@ -2349,7 +2349,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^8.2.0:
+lint-staged@8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.2.1.tgz#752fcf222d9d28f323a3b80f1e668f3654ff221f"
   integrity sha512-n0tDGR/rTCgQNwXnUf/eWIpPNddGWxC32ANTNYsj2k02iZb7Cz5ox2tytwBu+2r0zDXMEMKw7Y9OD/qsav561A==
