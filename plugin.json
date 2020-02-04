@@ -1,0 +1,25 @@
+{
+	"id": "nodebb-plugin-firebase",
+	"url": "https://github.com/NodeBB/nodebb-plugin-firebase",
+	"library": "./lib/main.js",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+		{ "hook": "action:settings.set", "method": "onSettingsChange" },
+		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
+		{ "hook": "action:notification.pushed", "method": "notify" }
+	],
+	"scripts": [
+		"static/lib/main.js",
+		"static/lib/push-notifications.js"
+	],
+	"acpScripts": [
+		"static/lib/admin.js"
+	],
+	"modules": {
+		"firebase.js": "static/lib/firebase.js",
+		"@firebase/app.js": "node_modules/firebase/firebase-app.js",
+		"@firebase/messaging.js": "node_modules/firebase/firebase-messaging.js"
+	},
+	"templates": "static/templates"
+}

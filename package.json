@@ -1,0 +1,52 @@
+{
+  "name": "nodebb-plugin-firebase",
+  "version": "0.0.0",
+  "description": "",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NodeBB/nodebb-plugin-firebase"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": {
+    "name": "Julian Lam",
+    "email": "julian@nodebb.org"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NodeBB/nodebb-plugin-firebase/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-angular": "^7.1.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^2.4.0",
+    "lint-staged": "^8.2.0"
+  },
+  "dependencies": {
+    "firebase": "^7.7.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
+  }
+}
