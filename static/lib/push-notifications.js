@@ -8,7 +8,7 @@ define('forum/account/push-notifications', ['firebase'], function (firebase) {
 	module.init = function init() {
 		// Wait until firebase is initialized before proceeding
 		if (!firebase._ok.app) {
-			setTimeout(init, 250);
+			return setTimeout(init, 250);
 		}
 
 		const elements = {
@@ -25,21 +25,25 @@ define('forum/account/push-notifications', ['firebase'], function (firebase) {
 		// Handle invalid browser/incognito(?)
 		if (!firebase._ok.messaging) {
 			hideAll();
-			elements.error.show();
+			return elements.error.show();
 		}
+
+		firebase.messaging.onTokenRefresh(async () => {
+			const token = await firebase.messaging.getToken();
+			socket.emit('plugins.firebase.messaging.subscribe', token);
+		});
 
 		elements.check.on('click', function check() {
 			const permission = Notification.permission;
-			const ok = () => {
-				firebase.messaging.getToken().then(function (currentToken) {
-					hideAll();
-					socket.emit('plugins.firebase.messaging.check', currentToken, (err, subscribed) => {
-						if (err) {
-							return elements.error.show();
-						}
+			const ok = async () => {
+				const token = await firebase.messaging.getToken();
+				hideAll();
+				socket.emit('plugins.firebase.messaging.check', token, (err, subscribed) => {
+					if (err) {
+						return elements.error.show();
+					}
 
-						elements[subscribed ? 'subscribed' : 'unsubscribed'].show();
-					});
+					elements[subscribed ? 'subscribed' : 'unsubscribed'].show();
 				});
 			};
 
@@ -57,25 +61,23 @@ define('forum/account/push-notifications', ['firebase'], function (firebase) {
 			}
 		});
 
-		elements.unsubscribed.on('click', 'button', () => {
-			firebase.messaging.getToken().then(function (currentToken) {
-				hideAll();
-				socket.emit('plugins.firebase.messaging.subscribe', currentToken, () => {
-					elements.subscribed.show();
-				});
+		elements.unsubscribed.on('click', 'button', async () => {
+			const token = await firebase.messaging.getToken();
+			hideAll();
+			socket.emit('plugins.firebase.messaging.subscribe', token, () => {
+				elements.subscribed.show();
 			});
 		});
 
-		elements.subscribed.on('click', 'button', () => {
-			firebase.messaging.getToken().then(function (currentToken) {
-				hideAll();
-				socket.emit('plugins.firebase.messaging.unsubscribe', currentToken, (err, ok) => {
-					if (err && !ok) {
-						return elements.error.show();
-					}
+		elements.subscribed.on('click', 'button', async () => {
+			const token = await firebase.messaging.getToken();
+			hideAll();
+			socket.emit('plugins.firebase.messaging.unsubscribe', token, (err, ok) => {
+				if (err && !ok) {
+					return elements.error.show();
+				}
 
-					elements.unsubscribed.show();
-				});
+				elements.unsubscribed.show();
 			});
 		});
 	};
