@@ -1,7 +1,49 @@
 <form role="form" class="firebase-settings">
-	<div class="row">
-		<div class="col-sm-2 col-xs-12 settings-header">App Configuration</div>
-		<div class="col-sm-10 col-xs-12">
+	<ul class="nav nav-tabs">
+		<li role="presentation" class="active"><a href="#home" data-toggle="tab">Dashboard</a></li>
+		<li role="presentation"><a href="#app" data-toggle="tab">App Configuration</a></li>
+		<li role="presentation"><a href="#messaging" data-toggle="tab">Cloud Messaging</a></li>
+	</ul>
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="home">
+			<p class="lead">
+				Configuration for the Firebase plugin can be accessed with the tabs above.
+			</p>
+			<p>
+				For assistance setting up or using this plugin, to report a deficiency, or to request a new feature for this plugin, please contact NodeBB at <a href="mailto:support@nodebb.org">support@nodebb.org</a>.
+			</p>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div><canvas id="firebase.messaging.notifications" height="250"></canvas></div>
+						</div>
+						<div class="panel-footer">Figure 1 &ndash; Notifications sent per day</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div><canvas id="firebase.messaging.subscribe" height="250"></canvas></div>
+						</div>
+						<div class="panel-footer">Figure 2 &ndash; Device subscriptions per day</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div><canvas id="firebase.messaging.unsubscribe" height="250"></canvas></div>
+						</div>
+						<div class="panel-footer">Figure 3 &ndash; Device unsubscriptions per day</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="app">
+
 			<p class="lead">
 				Enter your Firebase app configuration here. You are given these values when you create an app from the <a href="https://console.firebase.google.com">Firebase Console</a>.
 			</p>
@@ -40,10 +82,7 @@
 				<input type="text" id="appId" name="appId" title="App ID" class="form-control" placeholder="App ID">
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-2 col-xs-12 settings-header">Cloud Messaging</div>
-		<div class="col-sm-10 col-xs-12">
+		<div role="tabpanel" class="tab-pane" id="messaging">
 			<p class="lead">
 				The values here can also be found in the Project Settings page, but under the "Cloud Messaging" tab.
 			</p>

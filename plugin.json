@@ -9,6 +9,9 @@
 		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
 		{ "hook": "action:notification.pushed", "method": "notify" }
 	],
+	"acpLess": [
+		"static/style.less"
+	],
 	"scripts": [
 		"static/lib/main.js",
 		"static/lib/push-notifications.js"
